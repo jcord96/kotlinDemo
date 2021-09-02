@@ -7,4 +7,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "kotlinDemo"
+
 include ':app'
+include ':domain'
+include ':data'
+include ':usecases'
