@@ -10,4 +10,11 @@ java {
 
 dependencies {
     implementation(project(":domain"))
+
+    Libs.kotlinLibs.forEach { kotlinLibs ->
+        implementation(kotlinLibs)
+    }
+    Libs.testLibs.forEach { testLibs ->
+        testImplementation(testLibs)
+    }
 }
