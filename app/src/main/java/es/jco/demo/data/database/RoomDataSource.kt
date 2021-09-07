@@ -5,7 +5,9 @@ import javax.inject.Inject
 
 class RoomDataSource @Inject constructor(private val appRoomDatabase: AppRoomDatabase) : LocalDataSource {
 
+    private val addressDao = appRoomDatabase.addressDao()
+    private val companyDao = appRoomDatabase.companyDao()
+    private val geoDao = appRoomDatabase.geoDao()
     private val userDao = appRoomDatabase.userDao()
-
 
 }

@@ -69,7 +69,7 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun provideLocalDataSource(appRoomDatabase: AppRoomDatabase): RoomDataSource {
+    fun provideLocalDataSource(appRoomDatabase: AppRoomDatabase): LocalDataSource {
         return RoomDataSource(appRoomDatabase)
     }
 }
