@@ -10,6 +10,6 @@ data class GeoDTOResult(
 
 @Parcelize
 data class GeoDTO (
-    @SerializedName("lat") var lat: Long?,
-    @SerializedName("lng") var lng: Long?
+    @SerializedName("lat") var lat: String?,
+    @SerializedName("lng") var lng: String?
 ) : Parcelable

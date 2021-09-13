@@ -14,6 +14,9 @@ dependencies {
     Libs.kotlinLibs.forEach { kotlinLibs ->
         implementation(kotlinLibs)
     }
+    Libs.libs.forEach { libs ->
+        implementation(libs)
+    }
     Libs.testLibs.forEach { testLibs ->
         testImplementation(testLibs)
     }

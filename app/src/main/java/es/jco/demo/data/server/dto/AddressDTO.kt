@@ -9,10 +9,10 @@ data class AddressDTOResult(
 )
 
 @Parcelize
-data class AddressDTO (
+data class AddressDTO(
     @SerializedName("street") var street: String?,
     @SerializedName("suite") var suite: String?,
     @SerializedName("city") var city: String?,
     @SerializedName("zipcode") var zipcode: String?,
-    @SerializedName("geo") var geo: GeoDTO?
+    @SerializedName("geo") var geoDTO: GeoDTO?
 ) : Parcelable

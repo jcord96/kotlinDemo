@@ -5,11 +5,11 @@ import es.jco.domain.Geo as GeoDomain
 
 fun GeoDTO.toDomain() = GeoDomain(
     null,
-    this.lat,
-    this.lng
+    this.lat?.toDouble(),
+    this.lng?.toDouble()
 )
 
 fun GeoDomain.toDTO() = GeoDTO(
-    this.lat,
-    this.lng
+    this.lat.toString(),
+    this.lng.toString()
 )

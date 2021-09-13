@@ -9,7 +9,7 @@ fun AddressDTO.toDomain() = AddressDomain(
     this.suite,
     this.city,
     this.zipcode,
-    this.geo?.toDomain()
+    this.geoDTO?.toDomain()
 )
 
 fun AddressDomain.toDTO() = AddressDTO(

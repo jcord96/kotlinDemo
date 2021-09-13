@@ -6,11 +6,21 @@ import es.jco.demo.data.database.dao.AddressDao
 import es.jco.demo.data.database.dao.CompanyDao
 import es.jco.demo.data.database.dao.GeoDao
 import es.jco.demo.data.database.dao.UserDao
-import es.jco.demo.data.database.entity.User
+import es.jco.demo.data.database.entity.AddressEntity
+import es.jco.demo.data.database.entity.CompanyEntity
+import es.jco.demo.data.database.entity.GeoEntity
+import es.jco.demo.data.database.entity.UserEntity
 
 @Database(
-    entities = [User::class],
-    version = 1)
+    entities = [
+        UserEntity::class,
+        AddressEntity::class,
+        GeoEntity::class,
+        CompanyEntity::class
+    ],
+
+    version = 1
+)
 abstract class AppRoomDatabase : RoomDatabase() {
 
     abstract fun addressDao(): AddressDao

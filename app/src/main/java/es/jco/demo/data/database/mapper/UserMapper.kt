@@ -1,27 +1,30 @@
 package es.jco.demo.data.database.mapper
 
+import es.jco.demo.data.database.entity.UserEntity as UseParentEntity
+import es.jco.demo.data.database.entity.UserParentEntity as UserEntity
 import es.jco.domain.User as UserDomain
-import es.jco.demo.data.database.entity.User as UserEntity
 
 fun UserEntity.toDomain() = UserDomain(
-    this.id,
-    this.name,
-    this.username,
-    this.email,
+    this.user.userId,
+    this.user.name,
+    this.user.username,
+    this.user.email,
     this.address?.toDomain(),
-    this.phone,
-    this.website,
+    this.user.phone,
+    this.user.website,
     this.company?.toDomain()
 )
 
 fun UserDomain.toEntity() = UserEntity(
-    this.id,
-    this.name,
-    this.username,
-    this.email,
-    this.address?.toEntity(),
-    this.phone,
-    this.website,
-    this.company?.toEntity()
+    UseParentEntity(
+        this.id,
+        this.name,
+        this.username,
+        this.email,
+        this.phone,
+        this.website
+    ),
+    this.address?.toEntity(this.id),
+    this.company?.toEntity(this.id)
 )
 

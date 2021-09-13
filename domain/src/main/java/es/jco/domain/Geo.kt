@@ -1,7 +1,7 @@
 package es.jco.domain
 
 data class Geo (
-    val id: Int?,
-    val lat: Long?,
-    val lng: Long?
+    var id: Long?,
+    var lat: Double?,
+    var lng: Double?
 )

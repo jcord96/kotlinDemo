@@ -1,8 +1,8 @@
 package es.jco.domain
 
 data class Company (
-    val id: Int?,
-    val name: String?,
-    val catchPhrase: String?,
-    val bs: String?
+    var id: Long?,
+    var name: String?,
+    var catchPhrase: String?,
+    var bs: String?
 )

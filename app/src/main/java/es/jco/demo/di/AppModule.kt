@@ -1,4 +1,4 @@
-package es.jco.demo.presentation.di
+package es.jco.demo.di
 
 import android.content.Context
 import androidx.room.Room
@@ -22,27 +22,23 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModule {
+object AppModule {
 
     // Provides for data server
 
     @Singleton
     @Provides
-    fun provideOkkHttpClient(): OkHttpClient {
-        var client = OkHttpClient.Builder().build()
-
-        return client
-    }
+    fun provideOkkHttpClient(): OkHttpClient = OkHttpClient.Builder().build()
 
     @Singleton
     @Provides
-    fun provideRetrofit(okkHttpClient: OkHttpClient): Retrofit.Builder {
+    fun provideRetrofit(okkHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(ServerConstants.URL)
+            .baseUrl(ServerConstants.URL_BASE)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okkHttpClient)
+            .build()
     }
-
     @Singleton
     @Provides
     fun provideApiClient(retrofit: Retrofit) : APIService {

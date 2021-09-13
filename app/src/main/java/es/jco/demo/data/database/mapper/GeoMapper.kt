@@ -1,16 +1,17 @@
 package es.jco.demo.data.database.mapper
 
+import es.jco.demo.data.database.entity.GeoEntity
 import es.jco.domain.Geo as GeoDomain
-import es.jco.demo.data.database.entity.Geo as GeoEntity
 
 fun GeoEntity.toDomain() = GeoDomain(
-    this.id,
+    this.geoId,
     this.lat,
     this.lng
 )
 
-fun GeoDomain.toEntity() = GeoEntity(
+fun GeoDomain.toEntity(addressId: Long?) = GeoEntity(
     this.id,
     this.lat,
-    this.lng
+    this.lng,
+    addressId
 )

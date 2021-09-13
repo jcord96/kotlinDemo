@@ -1,12 +1,12 @@
 package es.jco.domain
 
 data class User (
-    val id: Int,
-    val name: String?,
-    val username: String?,
-    val email: String?,
-    val address: Address?,
-    val phone: String?,
-    val website: String?,
-    val company: Company?
+    var id: Long?,
+    var name: String?,
+    var username: String?,
+    var email: String?,
+    var address: Address?,
+    var phone: String?,
+    var website: String?,
+    var company: Company?
 )

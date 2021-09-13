@@ -3,10 +3,8 @@ package es.jco.demo.presentation.ui.main
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 import es.jco.demo.databinding.ActivityMainBinding
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

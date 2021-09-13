@@ -10,7 +10,7 @@ data class UserDTOResult(
 
 @Parcelize
 data class UserDTO (
-    @SerializedName("id") var id: Int,
+    @SerializedName("id") var id: Long,
     @SerializedName("name") var name: String?,
     @SerializedName("username") var username: String?,
     @SerializedName("email") var email: String?,

@@ -4,8 +4,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Geo (
-    @PrimaryKey(autoGenerate = true) val id: Int,
-    val lat: Long?,
-    val lng: Long?
+data class GeoEntity(
+    @PrimaryKey(autoGenerate = true) val geoId: Long?,
+    val lat: Double?,
+    val lng: Double?,
+    val addressId: Long?
 )
