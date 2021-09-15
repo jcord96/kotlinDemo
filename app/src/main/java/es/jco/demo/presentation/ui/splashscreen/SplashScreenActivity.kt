@@ -36,9 +36,9 @@ class SplashScreenActivity : AppCompatActivity() {
         lifecycleScope.launch {
             viewModel.loadUsers().collect {
                 when (it) {
-                    State.Loading -> Unit // nothing
-                    is State.Success -> startMainActivity()
-                    is State.Failure -> failureLoadData(it.throwable)
+                    State.OnLoading -> Unit // nothing
+                    is State.OnSuccess -> startMainActivity()
+                    is State.OnFailure -> failureLoadData(it.throwable)
                 }
             }
         }

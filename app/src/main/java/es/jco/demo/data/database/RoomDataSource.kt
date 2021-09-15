@@ -4,6 +4,8 @@ import es.jco.data.source.LocalDataSource
 import es.jco.demo.data.database.mapper.toDomain
 import es.jco.demo.data.database.mapper.toEntity
 import es.jco.domain.User
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class RoomDataSource @Inject constructor(appRoomDatabase: AppRoomDatabase) :
@@ -26,4 +28,7 @@ class RoomDataSource @Inject constructor(appRoomDatabase: AppRoomDatabase) :
     }
 
     override suspend fun getUsers(): List<User> = userDao.getUsers().map { it.toDomain() }
+
+    override suspend fun getUsersUpdatable(): Flow<List<User>> =
+        userDao.getUsersUpdatable().map { it.map { user -> user.toDomain() } }
 }

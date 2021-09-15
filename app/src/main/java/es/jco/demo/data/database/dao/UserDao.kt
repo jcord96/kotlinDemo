@@ -3,6 +3,7 @@ package es.jco.demo.data.database.dao
 import androidx.room.*
 import es.jco.demo.data.database.entity.UserEntity
 import es.jco.demo.data.database.entity.UserParentEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao {
@@ -18,4 +19,8 @@ interface UserDao {
     @Transaction
     @Query("SELECT * FROM UserEntity")
     suspend fun getUsers(): List<UserParentEntity>
+
+    @Transaction
+    @Query("SELECT * FROM UserEntity")
+    fun getUsersUpdatable(): Flow<List<UserParentEntity>>
 }

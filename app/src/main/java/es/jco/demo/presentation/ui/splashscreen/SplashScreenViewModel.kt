@@ -15,11 +15,11 @@ class SplashScreenViewModel @Inject constructor(
 
     // During screen startup, data is preloaded to streamline requests
     suspend fun loadUsers() = flow {
-        emit(State.Loading)
+        emit(State.OnLoading)
 
         when (val resultData = loadUsersUseCase.invoke()) {
-            is ResultData.Success -> emit(State.Success(resultData.value))
-            is ResultData.Failure -> emit(State.Failure(resultData.throwable))
+            is ResultData.Success -> emit(State.OnSuccess(resultData.value))
+            is ResultData.Failure -> emit(State.OnFailure(resultData.throwable))
         }
     }
 }

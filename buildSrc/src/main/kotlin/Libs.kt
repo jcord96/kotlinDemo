@@ -23,7 +23,9 @@ object Libs {
     val libs = listOf(
         "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}",
         "com.squareup.retrofit2:retrofit:${Versions.retrofit}",
-        "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+        "com.squareup.retrofit2:converter-gson:${Versions.retrofit}",
+              "androidx.cardview:cardview:1.0.0"
+
     )
 
     val testLibs = listOf(

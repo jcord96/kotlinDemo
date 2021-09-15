@@ -7,6 +7,7 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 import es.jco.demo.presentation.ui.detail.DetailViewModel
 import es.jco.demo.presentation.ui.main.MainViewModel
 import es.jco.demo.presentation.ui.splashscreen.SplashScreenViewModel
+import es.jco.usecases.GetUsersUseCase
 import es.jco.usecases.LoadUsersUseCase
 
 @Module
@@ -22,7 +23,7 @@ class SplashScreenActivityModule {
 class MainActivityModule {
 
     @Provides
-    fun mainViewModelProvider() = MainViewModel()
+    fun mainViewModelProvider(getUsersUseCase: GetUsersUseCase) = MainViewModel(getUsersUseCase)
 }
 
 @Module
