@@ -4,10 +4,6 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
-data class CompanyDTOResult(
-    val result: List<CompanyDTO>
-)
-
 @Parcelize
 data class CompanyDTO(
     @SerializedName("name") var name: String?,

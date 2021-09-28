@@ -18,8 +18,15 @@ import es.jco.demo.data.server.ServerDataSource
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+/**
+ * App module
+ * This class declares all providers to inject application modules
+ *
+ * @constructor Create empty App module
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
@@ -28,20 +35,29 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideOkkHttpClient(): OkHttpClient = OkHttpClient.Builder().build()
+    fun provideOkHttpClient(): OkHttpClient {
+        // Annotation -> To improve the request security, if the API had an API KEY, it could be
+        //               added to the header in an HTTP interceptor
+        return OkHttpClient.Builder()
+            .connectTimeout(ServerConstants.HTTP_CONNECT_TIMEOUT, TimeUnit.MINUTES)
+            .readTimeout(ServerConstants.HTTP_READ_TIMEOUT, TimeUnit.MINUTES)
+            .writeTimeout(ServerConstants.HTTP_WRITE_TIMEOUT, TimeUnit.MINUTES)
+            .build()
+    }
 
     @Singleton
     @Provides
-    fun provideRetrofit(okkHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(ServerConstants.URL_BASE)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(okkHttpClient)
+            .client(okHttpClient)
             .build()
     }
+
     @Singleton
     @Provides
-    fun provideApiClient(retrofit: Retrofit) : APIService {
+    fun provideApiClient(retrofit: Retrofit): APIService {
         return retrofit.create(APIService::class.java)
     }
 
@@ -55,7 +71,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAppDatabase(@ApplicationContext appContext: Context) : AppRoomDatabase {
+    fun provideAppDatabase(@ApplicationContext appContext: Context): AppRoomDatabase {
         return Room.databaseBuilder(
             appContext,
             AppRoomDatabase::class.java,

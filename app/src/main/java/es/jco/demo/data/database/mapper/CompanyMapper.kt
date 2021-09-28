@@ -12,8 +12,8 @@ fun CompanyEntity.toDomain() = CompanyDomain(
 
 fun CompanyDomain.toEntity(userId: Long?) = CompanyEntity(
     this.id,
-    this.name,
-    this.catchPhrase,
-    this.bs,
+    this.name?.trim(),
+    this.catchPhrase?.trim(),
+    this.bs?.trim(),
     userId
 )

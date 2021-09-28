@@ -10,18 +10,16 @@ fun AddressEntity.toDomain() = AddressDomain(
     this.address?.suite,
     this.address?.city,
     this.address?.zipcode,
-        this.geo?.toDomain()
+    this.geo?.toDomain()
     )
-
-
 
 fun AddressDomain.toEntity(userId: Long?) = AddressEntity(
     AddressParentEntity(
         this.id,
-        this.street,
-        this.suite,
-        this.city,
-        this.zipcode,
+        this.street?.trim(),
+        this.suite?.trim(),
+        this.city?.trim(),
+        this.zipcode?.trim(),
         userId
     ),
     this.geo?.toEntity(this.id)

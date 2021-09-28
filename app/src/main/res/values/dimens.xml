@@ -1,3 +1,19 @@
 <resources>
-        <dimen name="fab_margin">16dp</dimen>
-    </resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="detail_layout_padding_start">15dp</dimen>
+    <dimen name="detail_layout_padding_end">15dp</dimen>
+    <dimen name="detail_layout_margin_top">15dp</dimen>
+    <dimen name="detail_layout_padding_bottom">15dp</dimen>
+
+    <dimen name="detail_input_padding_start">55dp</dimen>
+    <dimen name="detail_input_padding_end">0dp</dimen>
+
+    <dimen name="detail_input_corner">5dp</dimen>
+    <dimen name="detail_input_image">55dp</dimen>
+    <dimen name="detail_input_padding_image">15dp</dimen>
+    <dimen name="detail_input_padding_without_image">55dp</dimen>
+    <dimen name="detail_input_padding_dual">5dp</dimen>
+    <integer name="detail_input_weight_unique">8</integer>
+    <integer name="detail_input_weight_dual">5</integer>
+</resources>

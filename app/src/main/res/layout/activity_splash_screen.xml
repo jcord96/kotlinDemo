@@ -5,4 +5,4 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.splashscreen.SplashScreenActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout >

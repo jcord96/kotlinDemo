@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinDemo" >
+
         <activity
             android:name=".presentation.ui.splashscreen.SplashScreenActivity"
             android:theme="@style/Theme.Splash"
@@ -21,13 +22,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".presentation.ui.main.MainActivity"
             android:exported="true" >
         </activity>
+
         <activity
             android:name=".presentation.ui.detail.DetailActivity"
-            android:exported="true" />
+            android:exported="true">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".presentation.ui.main.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

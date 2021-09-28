@@ -14,16 +14,15 @@ fun UserDTO.toDomain() = UserDomain(
     this.companyDTO?.toDomain()
 )
 
-fun UserDomain.toDTO() = this.id?.let {
-    UserDTO(
-        it,
-        this.name,
-        this.username,
-        this.email,
+fun UserDomain.toDTO() = UserDTO(
+        this.id,
+        this.name?.trim(),
+        this.username?.trim(),
+        this.email?.trim(),
         this.address?.toDTO(),
-        this.phone,
-        this.website,
+        this.phone?.trim(),
+        this.website?.trim(),
         this.company?.toDTO()
-    )
-}
+)
+
 

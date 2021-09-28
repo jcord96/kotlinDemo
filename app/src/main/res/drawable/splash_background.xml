@@ -3,8 +3,8 @@
     android:opacity="opaque">
     <item android:drawable="@drawable/bg_gradient" />
     <item
-        android:height="100dp"
         android:width="100dp"
-        android:gravity="center"
-            android:drawable="@drawable/splash_fg"/>
+        android:height="100dp"
+        android:drawable="@drawable/ic_android"
+        android:gravity="center" />
 </layer-list>

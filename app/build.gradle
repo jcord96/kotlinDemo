@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.dokka'
 }
 
 android {
@@ -35,7 +36,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        viewBinding true
     }
 }
 
@@ -44,25 +45,24 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
     implementation(project(":usecases"))
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
-    Libs.androidLibs.forEach { androidLibs ->
-        implementation(androidLibs)
+
+    Libs.androidLibs.forEach { androidLib ->
+        implementation(androidLib)
     }
-    Libs.kotlinLibs.forEach { kotlinLibs ->
-        implementation(kotlinLibs)
+    Libs.kotlinLibs.forEach { kotlinLib ->
+        implementation(kotlinLib)
     }
-    Libs.libs.forEach { libs ->
-        implementation(libs)
+    Libs.libs.forEach { lib ->
+        implementation(lib)
     }
-    Libs.androidKaptLibs.forEach { androidKaptLibs ->
-        kapt(androidKaptLibs)
+    Libs.androidKaptLibs.forEach { androidKaptLib ->
+        kapt(androidKaptLib)
     }
-    Libs.testLibs.forEach { testLibs ->
-        testImplementation(testLibs)
+    Libs.testLibs.forEach { testLib ->
+        testImplementation(testLib)
     }
-    Libs.androidTestLibs.forEach { androidTestLibs ->
-        androidTestImplementation(androidTestLibs)
+    Libs.androidTestLibs.forEach { androidTestLib ->
+        androidTestImplementation(androidTestLib)
     }
 }

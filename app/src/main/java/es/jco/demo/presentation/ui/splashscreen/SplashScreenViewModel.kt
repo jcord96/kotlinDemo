@@ -8,13 +8,24 @@ import es.jco.usecases.LoadUsersUseCase
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
+/**
+ * Splash screen view model
+ *
+ * @property loadUsersUseCase
+ * @constructor Create empty Splash screen view model
+ */
 @HiltViewModel
 class SplashScreenViewModel @Inject constructor(
     private val loadUsersUseCase: LoadUsersUseCase
 ) : ViewModel() {
 
-    // During screen startup, data is preloaded to streamline requests
+    /**
+     * Function to load the users from server and save them in db
+     *
+     * @return flow with result state
+     */
     suspend fun loadUsers() = flow {
+        // During screen startup, data is preloaded to streamline requests
         emit(State.OnLoading)
 
         when (val resultData = loadUsersUseCase.invoke()) {

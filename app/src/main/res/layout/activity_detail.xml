@@ -1,8 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.detail.DetailActivity">
 
+    <!-- This layout is too big. Has rendering problems -->
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/detail_layout_padding_start"
+            android:paddingEnd="@dimen/detail_layout_padding_end"
+            android:paddingBottom="@dimen/detail_layout_padding_bottom">
+
+            <ImageView
+                android:id="@+id/username_icon"
+                style="@style/ViewDetail"
+                android:contentDescription="@string/cd_input_username"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_account" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username"
+                style="@style/InputDetail"
+                android:hint="@string/detail_username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/username_icon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username_input"
+                    style="@style/InputEditTextDetail"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/name_icon"
+                style="@style/ViewDetail"
+                android:contentDescription="@string/cd_input_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/username"
+                app:srcCompat="@drawable/ic_person" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name"
+                style="@style/InputDetail"
+                android:hint="@string/detail_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/name_icon"
+                app:layout_constraintTop_toBottomOf="@+id/username">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/email_icon"
+                style="@style/ViewDetail"
+                android:contentDescription="@string/cd_input_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:srcCompat="@drawable/ic_email" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
+                style="@style/InputDetail"
+                android:hint="@string/detail_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/email_icon"
+                app:layout_constraintTop_toBottomOf="@+id/name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_input"
+                    style="@style/InputEditTextDetail"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/location_icon"
+                style="@style/ViewDetail"
+                android:contentDescription="@string/cd_input_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_icon"
+                app:srcCompat="@drawable/ic_location" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_street"
+                style="@style/InputDetail"
+                android:hint="@string/detail_address_street"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/location_icon"
+                app:layout_constraintTop_toBottomOf="@+id/email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_street_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_suite"
+                style="@style/InputDetail"
+                android:hint="@string/detail_address_suite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/address_street">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_suite_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_city"
+                style="@style/InputDetail"
+                android:hint="@string/detail_address_city"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/address_suite">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_city_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_zipcode"
+                style="@style/InputDetail"
+                android:hint="@string/detail_address_zipcode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/address_city">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_zipcode_input"
+                    style="@style/InputEditTextDetail" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_geo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:baselineAligned="false"
+                android:paddingStart="@dimen/detail_input_padding_start"
+                android:paddingEnd="@dimen/detail_input_padding_end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_zipcode">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/address_geo_lat"
+                    style="@style/DualInputDetail"
+                    android:hint="@string/detail_address_geo_lat"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="@dimen/detail_input_padding_dual">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address_geo_lat_input"
+                        style="@style/InputEditTextDetail"
+                        android:inputType="numberDecimal|numberSigned" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/address_geo_lng"
+                    style="@style/DualInputDetail"
+                    android:hint="@string/detail_address_geo_lng"
+                    android:paddingStart="@dimen/detail_input_padding_dual"
+                    android:paddingEnd="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address_geo_lng_input"
+                        style="@style/InputEditTextDetail"
+                        android:inputType="numberDecimal|numberSigned" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ImageView
+                android:id="@+id/phone_icon"
+                style="@style/ViewDetail"
+                android:contentDescription="@string/cd_input_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_geo"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phone"
+                style="@style/InputDetail"
+                android:hint="@string/detail_phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/phone_icon"
+                app:layout_constraintTop_toBottomOf="@+id/layout_geo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/website_icon"
+                style="@style/ViewDetail"
+                android:contentDescription="@string/cd_input_website"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone_icon"
+                app:srcCompat="@drawable/ic_web" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/website"
+                style="@style/InputDetail"
+                android:hint="@string/detail_website"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/website_icon"
+                app:layout_constraintTop_toBottomOf="@+id/phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/website_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/business_icon"
+                style="@style/ViewDetail"
+                android:contentDescription="@string/cd_input_company"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/website_icon"
+                app:srcCompat="@drawable/ic_business" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company_name"
+                style="@style/InputDetail"
+                android:hint="@string/detail_company_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/website">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/company_name_input"
+                    style="@style/InputEditTextDetail" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company_catch_phrase"
+                style="@style/InputDetail"
+                android:hint="@string/detail_company_catch_phrase"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/company_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/company_catch_phrase_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company_bs"
+                style="@style/InputDetail"
+                android:hint="@string/detail_company_bs"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/company_catch_phrase">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/company_bs_input"
+                    style="@style/InputEditTextDetail" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/color_primary_variant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

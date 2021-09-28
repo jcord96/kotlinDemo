@@ -8,6 +8,8 @@ object Libs {
         "androidx.recyclerview:recyclerview:${Versions.recyclerView}",
         "androidx.room:room-runtime:${Versions.room}",
         "androidx.room:room-ktx:${Versions.room}",
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}",
+        "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     )
 
     val androidKaptLibs = listOf(
@@ -17,15 +19,15 @@ object Libs {
 
     val kotlinLibs = listOf(
         "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}",
+        "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}",
     )
 
     val libs = listOf(
         "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}",
         "com.squareup.retrofit2:retrofit:${Versions.retrofit}",
         "com.squareup.retrofit2:converter-gson:${Versions.retrofit}",
-              "androidx.cardview:cardview:1.0.0"
-
+        "androidx.cardview:cardview:1.0.0"
     )
 
     val testLibs = listOf(

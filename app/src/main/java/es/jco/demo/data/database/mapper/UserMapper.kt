@@ -18,11 +18,11 @@ fun UserEntity.toDomain() = UserDomain(
 fun UserDomain.toEntity() = UserEntity(
     UseParentEntity(
         this.id,
-        this.name,
-        this.username,
-        this.email,
-        this.phone,
-        this.website
+        this.name?.trim(),
+        this.username?.trim(),
+        this.email?.trim(),
+        this.phone?.trim(),
+        this.website?.trim()
     ),
     this.address?.toEntity(this.id),
     this.company?.toEntity(this.id)

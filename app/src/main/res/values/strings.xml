@@ -7,4 +7,31 @@
     <string name="ad_continue">Continue</string>
 
     <string name="cd_btn_add">Floating button to add users</string>
+    <string name="cd_input_username">Icon for the username input</string>
+    <string name="cd_input_name">Icon for the name input</string>
+    <string name="cd_input_email">Icon for the email input</string>
+    <string name="cd_input_location">Icon for the location inputs</string>
+    <string name="cd_input_phone">Icon for the phone input</string>
+    <string name="cd_input_website">Icon for the website input</string>
+    <string name="cd_input_company">Icon for the company inputs</string>
+
+    <string name="detail_username">Username</string>
+    <string name="detail_name">Name</string>
+    <string name="detail_email">Email</string>
+    <string name="detail_phone">Phone</string>
+    <string name="detail_website">Website</string>
+    <string name="detail_company_name">Company</string>
+    <string name="detail_company_catch_phrase">Catch Phrase</string>
+    <string name="detail_company_bs">Bs</string>
+    <string name="detail_address_street">Street</string>
+    <string name="detail_address_suite">Suite</string>
+    <string name="detail_address_city">City</string>
+    <string name="detail_address_zipcode">Zipcode</string>
+    <string name="detail_address_geo_lat">Lat</string>
+    <string name="detail_address_geo_lng">Lng</string>
+    <string name="action_detail_edit">Edit</string>
+    <string name="action_detail_save">Save</string>
+
+    <string name="error_input_required">This input is required</string>
+    <string name="error_unexpected">Unexpected error</string>
 </resources>

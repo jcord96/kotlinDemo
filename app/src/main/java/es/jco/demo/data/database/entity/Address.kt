@@ -1,6 +1,9 @@
 package es.jco.demo.data.database.entity
 
-import androidx.room.*
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.Relation
 
 @Entity
 data class AddressEntity(

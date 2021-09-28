@@ -11,6 +11,11 @@ import es.jco.demo.data.database.entity.CompanyEntity
 import es.jco.demo.data.database.entity.GeoEntity
 import es.jco.demo.data.database.entity.UserEntity
 
+/**
+ * App room database
+ *
+ * @constructor Create empty App room database
+ */
 @Database(
     entities = [
         UserEntity::class,
@@ -18,7 +23,6 @@ import es.jco.demo.data.database.entity.UserEntity
         GeoEntity::class,
         CompanyEntity::class
     ],
-
     version = 1
 )
 abstract class AppRoomDatabase : RoomDatabase() {

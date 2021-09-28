@@ -3,9 +3,8 @@ package es.jco.demo
 import com.google.gson.Gson
 import es.jco.demo.data.server.dto.UserDTO
 import es.jco.demo.data.server.mapper.toDomain
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).

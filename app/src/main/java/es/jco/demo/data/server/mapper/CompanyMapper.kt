@@ -11,7 +11,7 @@ fun CompanyDTO.toDomain() = CompanyDomain(
 )
 
 fun CompanyDomain.toDTO() = CompanyDTO(
-    this.name,
-    this.catchPhrase,
-    this.bs
+    this.name?.trim(),
+    this.catchPhrase?.trim(),
+    this.bs?.trim()
 )

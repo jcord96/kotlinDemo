@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class CompanyEntity(
-    @PrimaryKey(autoGenerate = true) val companyId: Long?,
+    @PrimaryKey(autoGenerate = true) var companyId: Long?,
     val name: String?,
     val catchPhrase: String?,
     val bs: String?,

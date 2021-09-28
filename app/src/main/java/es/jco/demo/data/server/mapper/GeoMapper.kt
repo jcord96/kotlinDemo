@@ -5,8 +5,8 @@ import es.jco.domain.Geo as GeoDomain
 
 fun GeoDTO.toDomain() = GeoDomain(
     null,
-    this.lat?.toDouble(),
-    this.lng?.toDouble()
+    this.lat?.let { if(it.isEmpty() || it.contains("null")) null else it.toDouble() },
+    this.lng?.let { if(it.isEmpty() || it.contains("null")) null else it.toDouble() }
 )
 
 fun GeoDomain.toDTO() = GeoDTO(

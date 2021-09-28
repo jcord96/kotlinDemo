@@ -13,9 +13,9 @@ fun AddressDTO.toDomain() = AddressDomain(
 )
 
 fun AddressDomain.toDTO() = AddressDTO(
-    this.street,
-    this.suite,
-    this.city,
-    this.zipcode,
+    this.street?.trim(),
+    this.suite?.trim(),
+    this.city?.trim(),
+    this.zipcode?.trim(),
     this.geo?.toDTO()
 )
